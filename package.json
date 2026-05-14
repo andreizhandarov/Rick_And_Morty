@@ -11,7 +11,10 @@
   },
   "dependencies": {
     "react": "^19.2.5",
-    "react-dom": "^19.2.5"
+    "react-dom": "^19.2.5",
+    "react-paginate": "^8.3.0",
+    "react-responsive-pagination": "^2.13.0",
+    "rick-and-morty": "link:"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

@@ -12,7 +12,7 @@ export const Cards = ({results}) => {
   if(results){
     display = results.map((x) => {
       return(
-        <div key ={x.id} style={{border: '2px solid #0b5ed7', borderRadius: '20px', overflow: 'hidden', position: 'relative'}}>
+        <div key ={x.id} style={{maxWidth: '300px', border: '2px solid #0b5ed7', borderRadius: '20px', overflow: 'hidden', position: 'relative'}}>
           <img src={x.image} style={{width: '100%', objectFit: 'contain'}} alt={x.name}/>
             <h3>{x.name}</h3>
             <div>
@@ -24,11 +24,11 @@ export const Cards = ({results}) => {
       )
     })
   }else{
-    display = 'No Characters Found :/'
+    display = 'No Characters Found :('
   }
 
   return (
-    <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
+    <div style={{width: '80%', display: 'flex', justifyContent: 'center'}}>
       <div style={{display: 'flex', flexWrap: 'wrap', gap: '20px', maxWidth: '980px'}}>
         {display}
       </div>
