@@ -20,6 +20,8 @@ export const Pagination = ({info, pageNumber, setPageNumber}: Props) => {
       pageLinkClassName={style.pageLink}
       activeItemClassName={style.active}
       disabledItemClassName={style.disabled}
+      previousClassName={style.prev}
+      nextClassName={style.next}
       previousLabel="Prev" 
       nextLabel="Next" 
       />

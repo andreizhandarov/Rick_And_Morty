@@ -1,3 +1,9 @@
+:root{
+  --primery: #0b5ed7;
+  --white: #ffffff;
+  --gray: #6c757d;
+}
+
 .pagination {
   display: flex;
   justify-content: center;
@@ -12,33 +18,60 @@
   position: relative;
   display: flex;
   justify-content: center;
-  border: 1px solid #007bff;
+  border: 1px solid var(--primery);
   margin: 0 2px;
   min-height: 40px;
-  min-width: 80px;
+  min-width: 40px;
   border-radius: 10px;
   text-align: center;
   line-height: 40px;
-  background-color: #ffffff;
-  color: #007bff;
+  background-color: var(--white);
+  color: var(--primery);
   text-decoration: none;
 }
 
 .pageItem .pageLink:hover {
-  background-color: #6c757d;
-  border: 1px solid #6c757d;
-  color: #ffffff;
+  background-color: var(--gray);
+  border: 1px solid var(--gray);
+  color: var(--white);
 }
 
 .pageItem.active .pageLink {
-  color: #ffffff;
-  background-color: #007bff;
+  color: var(--white);
+  background-color: var(--primery);
 }
 
 .pageItem.disabled .pageLink {
-  color: #6c757d;
-  border: 1px solid #6c757d;
+  color: var(--gray);
+  border: 1px solid var(--gray);
+  background-color: var(--white);
   pointer-events: none;
   cursor: auto;
+}
+
+.prev .pageLink {
+  min-height: 40px;
+  min-width: 80px;
+  background-color: var(--primery);
+  color: var(--white);
+}
+
+.prev .pageLink:hover {
+  background-color: var(--gray);
+  border: 1px solid var(--gray);
+  color: var(--white);
+}
+
+.next .pageLink {
+  min-height: 40px;
+  min-width: 80px;
+  background-color: var(--primery);
+  color: var(--white);
+}
+
+.next .pageLink:hover {
+  background-color: var(--gray);
+  border: 1px solid var(--gray);
+  color: var(--white);
 }
 
