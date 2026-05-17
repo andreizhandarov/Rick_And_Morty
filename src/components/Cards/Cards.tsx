@@ -28,7 +28,7 @@ export const Cards = ({results}) => {
   }
 
   return (
-    <div style={{width: '80%', display: 'flex', justifyContent: 'center'}}>
+    <div style={{width: '78%', display: 'flex', justifyContent: 'center'}}>
       <div style={{display: 'flex', flexWrap: 'wrap', gap: '20px', maxWidth: '980px'}}>
         {display}
       </div>
