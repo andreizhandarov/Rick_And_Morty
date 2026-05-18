@@ -33,10 +33,10 @@
 }
 
 .accordionContent {
-  max-height: 0;
+  height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease, padding 0.3s ease;
-  padding: 0 15px;
+  padding: 0px 15px;
 }
 
 .accordionHeader.open{
@@ -46,7 +46,7 @@
 }
 
 .accordionContent.open {
-  min-height: 100px;
+  /* min-height: 130px; */
   padding: 10px 15px;
   border-radius: 0 0 5px 5px;
   border: 1px solid #5186d6;
