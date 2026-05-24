@@ -1,22 +1,20 @@
 import style from './FilterButton.module.css'
 
-export const FilterButton = ({name, item, index, onFilters, setPageNumber}) => {
+export const FilterButton = ({name, item, index, onFilters, checked}) => {
 
   const handleRadioChange = () => {
     onFilters(item)
-    setPageNumber(1)
     console.log(item)
   }
 
   return (
     <div>
-      <label className={style.customRadio}> 
-        {/* className={`custom-radio ${checked ? 'active' : ''}`} */}
+      <label className={`${style.customRadio} ${checked ? style.active : ''}`}> 
             <input
                 type="radio"
                 id={index}
                 name={name}
-                // checked={checked}
+                checked={checked}
                 onChange={handleRadioChange}
                 className={style.hiddenRadio}
             />

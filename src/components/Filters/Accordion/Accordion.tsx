@@ -3,12 +3,13 @@ import { FilterButton } from "../FilterButton/FilterButton";
 import style from './Accordion.module.css'
 
 
-export const Accordion = ({title, children, onFilters, setPageNumber}) => {
+export const Accordion = ({title, children, onFilters, setPageNumber, onOpen}) => {
 
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(onOpen);
   const contentRef = useRef(null);
   const [contentHeight, setContentHeight] = useState(0);
-
+  const [selectedFilterButton, setSelectedFilterButton] = useState('');
+  
   const toggleAccordion = () => {
     setIsOpen(!isOpen);
   };
@@ -19,6 +20,12 @@ export const Accordion = ({title, children, onFilters, setPageNumber}) => {
     }
   }, [isOpen]);
 
+  const handleFilterChange = (item) => {
+    setSelectedFilterButton(item);
+    onFilters(item);
+    setPageNumber(1);
+  };
+
   return (
     <div className="accordion">
       <button className={`${style.accordionHeader} ${isOpen ? style.open : ''}`} onClick={toggleAccordion}>
@@ -27,7 +34,16 @@ export const Accordion = ({title, children, onFilters, setPageNumber}) => {
       </button>
       <div ref={contentRef} className={`${style.accordionContent} ${isOpen ? style.open : ''}`} style={{ height: contentHeight, display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
         {children.map((item, index)=>(
-          <FilterButton key={index} name={title} item={item} index={index} onFilters={onFilters} setPageNumber={setPageNumber}/>
+          item ? (
+          <FilterButton 
+            key={index} 
+            name={title} 
+            item={item} 
+            index={index} 
+            onFilters={handleFilterChange} 
+            checked={selectedFilterButton === item}
+            />
+          ) : ''
         ))}
       </div>
     </div>
