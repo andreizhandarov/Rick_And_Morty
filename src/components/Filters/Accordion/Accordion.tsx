@@ -3,7 +3,7 @@ import { FilterButton } from "../FilterButton/FilterButton";
 import style from './Accordion.module.css'
 
 
-export const Accordion = ({title, children, onFilters, setPageNumber, onOpen}) => {
+export const Accordion = ({title, children, onFilters, setPageNumber, onOpen, reset}) => {
 
   const [isOpen, setIsOpen] = useState(onOpen);
   const contentRef = useRef(null);
@@ -19,6 +19,10 @@ export const Accordion = ({title, children, onFilters, setPageNumber, onOpen}) =
       setContentHeight(isOpen ? contentRef.current.scrollHeight : 0);
     }
   }, [isOpen]);
+
+  useEffect(() => {
+    setSelectedFilterButton('');
+  }, [reset]);
 
   const handleFilterChange = (item) => {
     setSelectedFilterButton(item);

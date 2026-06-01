@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Accordion } from "./Accordion/Accordion";
 
 const status = ['Alive', 'Dead', 'unknown'];
@@ -18,12 +19,14 @@ const species = [
 
 
 export const Filters = ({setStatus, setGender, setSpecies, setPageNumber}) => {
+  const [resetTrigger, setResetTrigger] = useState(false);
 
   const onReset = () => {
     setStatus(''),
     setGender(''),
     setSpecies(''),
-    setPageNumber(1)
+    setPageNumber(1),
+    setResetTrigger(!resetTrigger)
   }
 
   return (
@@ -32,8 +35,8 @@ export const Filters = ({setStatus, setGender, setSpecies, setPageNumber}) => {
         <h3>Filter</h3>
         <button 
           onClick={onReset}
-          style={{width: '80px', border: 'none', backgroundColor: '#0b5ed7', borderRadius: '10px',  color: 'white', padding: '10px', marginBottom: '10px', cursor: 'pointer'}}
-          >Reset</button>
+          style={{width: '100px', border: 'none', backgroundColor: '#0b5ed7', borderRadius: '10px',  color: 'white', padding: '10px', marginBottom: '10px', cursor: 'pointer'}}
+          >Clean Filters</button>
       </div>
       <div>
         <Accordion 
@@ -42,6 +45,7 @@ export const Filters = ({setStatus, setGender, setSpecies, setPageNumber}) => {
           onFilters={setStatus} 
           setPageNumber={setPageNumber} 
           onOpen={true}
+          reset={resetTrigger}
           />
         <Accordion 
           title='Species' 
@@ -49,6 +53,7 @@ export const Filters = ({setStatus, setGender, setSpecies, setPageNumber}) => {
           onFilters={setSpecies} 
           setPageNumber={setPageNumber} 
           onOpen={false}
+          reset={resetTrigger}
           />
         <Accordion 
           title='Gender' 
@@ -56,6 +61,7 @@ export const Filters = ({setStatus, setGender, setSpecies, setPageNumber}) => {
           onFilters={setGender} 
           setPageNumber={setPageNumber} 
           onOpen={false}
+          reset={resetTrigger}
           />
       </div>
     </div>
