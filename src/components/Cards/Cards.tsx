@@ -12,7 +12,7 @@ export const Cards = ({results}) => {
   if(results){
     display = results.map((x) => {
       return(
-        <div key ={x.id} style={{maxWidth: '300px', border: '1px solid #0b5ed7', borderRadius: '20px', overflow: 'hidden', position: 'relative'}}>
+        <div key ={x.id} style={{width: '300px', border: '1px solid #0b5ed7', borderRadius: '20px', overflow: 'hidden', position: 'relative'}}>
           <img src={x.image} style={{width: '100%', objectFit: 'contain'}} alt={x.name}/>
             <h3>{x.name}</h3>
             <div>
