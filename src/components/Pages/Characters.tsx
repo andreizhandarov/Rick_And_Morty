@@ -34,7 +34,7 @@ export const Characters = () => {
 
       <Search setSearch={setSearch} setPageNumber={setPageNumber}/>
 
-      <div style={{display: 'flex', justifyContent: 'space-between'}}>
+      <div style={{display: 'flex', justifyContent: 'space-around'}}>
         <Filters setStatus={setStatus} setGender={setGender} setSpecies={setSpecies} setPageNumber={setPageNumber}/>
         <Cards results={results}/>
       </div>

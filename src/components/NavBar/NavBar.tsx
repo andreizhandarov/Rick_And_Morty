@@ -20,8 +20,8 @@ export const NavBar = () => {
 
       <nav className={`${style.headerNav} ${isMenuOpen ? style.open : style.closed}`}>
         <NavLink to='/' className={({isActive}) => isActive ? style.active : style.navLink}>Characters</NavLink>
-        <NavLink to='/episode' className={({isActive}) => isActive ? style.active : style.navLink}>Location</NavLink>
-        <NavLink to='/location' className={({isActive}) => isActive ? style.active : style.navLink}>Episode</NavLink>
+        <NavLink to='/episode' className={({isActive}) => isActive ? style.active : style.navLink}>Episode</NavLink>
+        <NavLink to='/location' className={({isActive}) => isActive ? style.active : style.navLink}>Location</NavLink>
       </nav>
 
     </div>
