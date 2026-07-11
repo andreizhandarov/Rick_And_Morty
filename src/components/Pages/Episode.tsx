@@ -47,7 +47,7 @@ export const Episode = () => {
           <h3>Pick Episodes</h3>
           <InputGroup total={count} name='Episode' setId={setId}/>
         </div>
-        <Cards results={results}/>
+        <Cards page='/episode/' results={results}/>
       </div>
     </div>
   );

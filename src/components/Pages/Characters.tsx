@@ -36,7 +36,7 @@ export const Characters = () => {
 
       <div style={{display: 'flex', justifyContent: 'space-around'}}>
         <Filters setStatus={setStatus} setGender={setGender} setSpecies={setSpecies} setPageNumber={setPageNumber}/>
-        <Cards results={results}/>
+        <Cards page='/' results={results}/>
       </div>
       {info?.pages && (
         <Pagination info={info}

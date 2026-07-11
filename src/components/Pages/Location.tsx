@@ -47,7 +47,7 @@ export const Location = () => {
           <h3>Pick Location</h3>
           <InputGroup total={count} name='Location' setId={setId}/>
         </div>
-        <Cards results={results}/>
+        <Cards page='/location/' results={results}/>
       </div>
     </div>
   );

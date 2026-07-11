@@ -1,18 +1,21 @@
 
-const priorityColors: { [key: string]: string } = {
+import { Link } from "react-router-dom";
+
+export const priorityColors: { [key: string]: string } = {
   Alive : 'green',
   Dead : 'red',
   unknown : 'grey',
 }
 
-export const Cards = ({results}) => {
+export const Cards = ({results, page}) => {
 
   let display;
 
   if(results){
     display = results.map((x) => {
       return(
-        <div key ={x.id} style={{width: '300px', border: '1px solid #0b5ed7', borderRadius: '20px', overflow: 'hidden', position: 'relative'}}>
+        <Link to = {`${page}${x.id}`} 
+          key ={x.id} style={{width: '300px', border: '1px solid #0b5ed7', borderRadius: '20px', overflow: 'hidden', position: 'relative', textDecoration: 'none', color: 'black'}}>
           <img src={x.image} style={{width: '100%', objectFit: 'contain'}} alt={x.name}/>
             <div style={{margin: '10px 0px 10px 30px' }}>
               <h3>{x.name}</h3>
@@ -22,7 +25,7 @@ export const Cards = ({results}) => {
               </div>
             </div>
             <div style={{position: 'absolute', top: '10px', right: '10px', fontSize: '17px', padding: '8px', borderRadius: '5px', backgroundColor: priorityColors[x.status], color: 'white'}}>{x.status}</div>
-        </div>
+        </Link>
       )
     })
   }else{
